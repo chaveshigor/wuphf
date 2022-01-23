@@ -1,17 +1,19 @@
 <h1>
-    <%=@contact_to_show.first_name%>
-    <%=@contact_to_show.last_name%>
+    <%=@current_contact.first_name%>
+    <%=@current_contact.last_name%>
 </h1>
 <div>
-    <%=@contact_to_show.email%>
+    <%=@current_contact.email%>
 </div>
 <div>
-    <%=@contact_to_show.phone_number%>
+    <%=@current_contact.phone_number%>
 </div>
 <div>
-    <%=@contact_to_show.telegram_profile%>
+    <%=@current_contact.telegram_profile%>
 </div>
 <div>
-    <%=@contact_to_show.gender%>
+    <%=@current_contact.gender%>
 </div>
 
+
+<%= link_to 'Deletar contato', contact_path, method: :delete %>
