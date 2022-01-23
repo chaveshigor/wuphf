@@ -1,2 +1,35 @@
 <h1>Contacts#new</h1>
 <p>Find me in app/views/contacts/new.html.erb</p>
+<%= form_with model: @current_contact do |f| %>
+    <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+    </div>
+
+    <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+    </div>
+
+    <div>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+    </div>
+
+    <div>
+        <%= f.label :telegram_profile %>
+        <%= f.text_field :telegram_profile %>
+    </div>
+
+    <div>
+        <%= f.label :phone_number %>
+        <%= f.phone_field :phone_number %>
+    </div>
+
+    <div>
+        <%= f.label :gender %>
+        <%= f.select :gender, ['Homem', 'Mulher'] %>
+    </div>
+
+    <%= f.submit "Criar contato" %>
+<% end %>
