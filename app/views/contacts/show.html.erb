@@ -1,2 +1,17 @@
-<h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<h1>
+    <%=@contact_to_show.first_name%>
+    <%=@contact_to_show.last_name%>
+</h1>
+<div>
+    <%=@contact_to_show.email%>
+</div>
+<div>
+    <%=@contact_to_show.phone_number%>
+</div>
+<div>
+    <%=@contact_to_show.telegram_profile%>
+</div>
+<div>
+    <%=@contact_to_show.gender%>
+</div>
+
