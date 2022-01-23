@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'sqlite3', '~> 1.4'
 # Devise gem
 gem 'devise'
+# Rspec gem
+gem 'rspec-rails'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
