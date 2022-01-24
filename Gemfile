@@ -39,6 +39,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Factory gem
   gem 'factory_bot_rails'
+  # Rails controller test gem
+  gem 'rails-controller-testing'
 end
 
 group :development do
