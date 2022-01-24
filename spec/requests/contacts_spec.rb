@@ -12,9 +12,17 @@ RSpec.describe 'Contacts', type: :request do
 
   describe 'GET /index' do
     it 'list all contacts' do
-      get '/contacts'
+      get contacts_path
 
       expect(assigns(:contacts)).to eq([contact])
+    end
+  end
+
+  describe 'GET /show' do
+    it 'show a single contact' do
+      get contact_path(contact)
+
+      expect(assigns(:current_contact)).to eq(contact)
     end
   end
 end
