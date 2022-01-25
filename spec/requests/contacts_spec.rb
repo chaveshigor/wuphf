@@ -25,4 +25,25 @@ RSpec.describe 'Contacts', type: :request do
       expect(assigns(:current_contact)).to eq(contact)
     end
   end
+
+  describe 'POST /create' do
+    subject(:post_create) { post contacts_path params: contact_params }
+    let(:contact_params) do
+      {
+        contact: {
+          first_name: 'mario',
+          last_name: 'luige',
+          email: 'marioworld@mail.com',
+          telegram_profile: 'its me',
+          phone_number: '666',
+          gender: 'Homem',
+          user_id: 1
+        }
+      }
+    end
+    it 'create a new contact' do
+      expect { post_create }.to change { Contact.count }.by(1)
+      expect(response).to redirect_to(contact_path(assigns(:current_contact)))
+    end
+  end
 end
