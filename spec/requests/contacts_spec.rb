@@ -27,7 +27,7 @@ RSpec.describe 'Contacts', type: :request do
   end
 
   describe 'POST /create' do
-    subject(:post_create) { post contacts_path params: contact_params }
+    subject(:contact_create) { post contacts_path params: contact_params }
     let(:contact_params) do
       {
         contact: {
@@ -42,8 +42,15 @@ RSpec.describe 'Contacts', type: :request do
       }
     end
     it 'create a new contact' do
-      expect { post_create }.to change { Contact.count }.by(1)
+      expect { contact_create }.to change { Contact.count }.by(1)
       expect(response).to redirect_to(contact_path(assigns(:current_contact)))
+    end
+  end
+
+  describe 'DELETE /destroy' do
+    subject(:contact_delete) { delete contact_path(contact) }
+    it 'delete an user' do
+      expect { contact_delete }.to change { Contact.count }.by(-1)
     end
   end
 end
