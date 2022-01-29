@@ -53,4 +53,12 @@ RSpec.describe 'Contacts', type: :request do
       expect { contact_delete }.to change { Contact.count }.by(-1)
     end
   end
+
+  describe 'PUT /update' do
+    subject(:contact_update) { put contact_path(contact), params: { contact: { first_name: 'Acerola' } } }
+    it 'update an user' do
+      contact_update
+      expect(contact.reload.first_name).to eq('Acerola')
+    end
+  end
 end
