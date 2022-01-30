@@ -3,9 +3,10 @@
 class CreateMessages < ActiveRecord::Migration[6.1]
   def change
     create_table :messages do |t|
-      t.string :status
-      t.text :message_body
-      t.references :user, null: false, foreign_key: true
+      t.string :title
+      t.text :message
+      t.boolean :telegram_sended
+      t.boolean :email_sended
       t.references :contact, null: false, foreign_key: true
 
       t.timestamps
