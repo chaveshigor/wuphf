@@ -1,0 +1,20 @@
+<%= form_with model: @new_message do |f| %>
+  
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    
+    <div>
+        <%= f.label :message %>
+        <%= f.text_field :message %>
+    </div>
+
+    <div>
+        <%= f.label :receiver %>
+        <%= f.select :contact_id, options_for_select(@user_contacts), {include_blank: false}, {multiple: true} %>
+    </div>
+
+    <%= f.submit 'Enviar mensagem' %>
+
+<% end %>
