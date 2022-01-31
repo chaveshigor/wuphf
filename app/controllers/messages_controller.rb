@@ -3,7 +3,8 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end
+  def index
+  end
 
   def show; end
 
@@ -14,6 +15,7 @@ class MessagesController < ApplicationController
 
   def create
     new_message = Message.new(message_params)
+    new_message.user_id = current_user.id
     new_message.save
 
     contact_params[:contact_id].each do |contact_id|
@@ -21,8 +23,6 @@ class MessagesController < ApplicationController
       # Throw send message event to queue in the future
     end
   end
-
-  def send_message; end
 
   private
 
