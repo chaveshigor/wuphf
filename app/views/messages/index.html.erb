@@ -1,2 +1,14 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1>Mensagens:</h1>
+<% @all_messages.each do |message| %>
+    <p>----------------</p>
+    <p><%= message.title %></p>
+    <p><%= message.message %></p>
+    
+    <h4>Enviado para:</h4>
+    <% message.contacts.each do |contact| %>
+        <p><%= contact.first_name %> <%= contact.last_name %></p>
+    <% end %>
+    
+<% end %>
+
+

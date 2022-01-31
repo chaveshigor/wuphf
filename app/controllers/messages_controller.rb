@@ -4,6 +4,8 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @all_messages = Message.where({ user_id: current_user.id })
+    puts @all_messages
   end
 
   def show; end
