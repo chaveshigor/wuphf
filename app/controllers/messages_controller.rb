@@ -5,10 +5,22 @@ class MessagesController < ApplicationController
 
   def index
     @all_messages = Message.where({ user_id: current_user.id })
-    puts @all_messages
   end
 
-  def show; end
+  def show
+    message = Message.find(params[:id])
+    message_contacts = ContactMessage.where({ message_id: message.id })
+    @message_info = { title: message.title, message: message.message, contacts: message_contacts.map do
+      |contact_message|
+      {
+        full_name: "#{contact_message.contact.first_name} #{contact_message.contact.last_name}",
+        telegram_sended: contact_message.telegram_sended,
+        email_sended: contact_message.email_sended
+      }
+    end }
+
+    puts @message_info[:contacts]
+  end
 
   def new
     @new_message = Message.new
