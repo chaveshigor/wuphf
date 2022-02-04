@@ -1,2 +1,24 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<%= form_with model: @new_group  do |f| %>
+
+    <h1>Crie um grupo</h1>
+
+    <div>
+        <%= f.label :Nome %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>
+        <%= f.label :Descrição %>
+        <%= f.text_field :description %>
+    </div>
+
+    <h2>Adicione usuários a esse grupo</h2>
+
+    <div>
+        <%= f.label "Contatos no grupo" %>
+        <%= f.select :contact_ids, options_for_select(@user_contacts), {include_blank: false}, {multiple: true} %>
+    </div>
+
+    <%= f.submit 'Criar grupo' %>
+
+<% end %>
