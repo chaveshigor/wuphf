@@ -14,8 +14,8 @@
 
 ActiveRecord::Schema.define(version: 20_220_131_142_008) do
   create_table 'contact_groups', force: :cascade do |t|
-    t.integer 'contact_id', null: false
-    t.integer 'group_id', null: false
+    t.integer 'contact_id'
+    t.integer 'group_id'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['contact_id'], name: 'index_contact_groups_on_contact_id'
@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(version: 20_220_131_142_008) do
   create_table 'groups', force: :cascade do |t|
     t.string 'name'
     t.text 'description'
+    t.integer 'user_id', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.index ['user_id'], name: 'index_groups_on_user_id'
   end
 
   create_table 'messages', force: :cascade do |t|
@@ -76,8 +78,7 @@ ActiveRecord::Schema.define(version: 20_220_131_142_008) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key 'contact_groups', 'contacts'
-  add_foreign_key 'contact_groups', 'groups'
   add_foreign_key 'contacts', 'users'
+  add_foreign_key 'groups', 'users'
   add_foreign_key 'messages', 'users'
 end
