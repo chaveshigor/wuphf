@@ -1,2 +1,4 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<% @groups.each do |group| %>
+    <p><%= group.name %> - <%= group.contacts.all.count %> participantes</p>
+<% end %>
+

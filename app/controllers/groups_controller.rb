@@ -2,7 +2,9 @@
 
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  def index; end
+  def index
+    @groups = Group.all
+  end
 
   def show; end
 
@@ -16,8 +18,6 @@ class GroupsController < ApplicationController
     new_group.user_id = current_user.id
     new_group.save
 
-    # members = ContactGroup.create({ group_id: group_id, contact_id: 1 })
-    puts group_members[:contact_ids].inspect, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'
     AddUsersToGroup.call(new_group.id, group_members[:contact_ids])
   end
 
