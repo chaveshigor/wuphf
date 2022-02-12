@@ -6,7 +6,9 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+  end
 
   def new
     @new_group = Group.new

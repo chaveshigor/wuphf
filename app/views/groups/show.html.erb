@@ -1,2 +1,5 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<h1><%= @group.name %></h1>
+<h2>Membros</h2>
+<% @group.contacts.each do |contact| %>
+    <p><%=contact.first_name%></p>
+<% end %>
