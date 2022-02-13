@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
   def show
     message = Message.find(params[:id])
-    message_contacts = ContactMessage.where({ message_id: message.id })
+    message_contacts = message.contacts
     @message_info = { title: message.title, message: message.message, contacts: message_contacts.map do
       |contact_message|
       {
@@ -18,8 +18,6 @@ class MessagesController < ApplicationController
         email_sended: contact_message.email_sended
       }
     end }
-
-    puts @message_info[:contacts]
   end
 
   def new
@@ -31,11 +29,9 @@ class MessagesController < ApplicationController
     new_message = Message.new(message_params)
     new_message.user_id = current_user.id
     new_message.save
+    new_message.contact_ids += contact_params[:contact_id]
 
-    contact_params[:contact_id].each do |contact_id|
-      ContactMessage.create!({ contact_id: contact_id, message_id: new_message.id }) if contact_id.present?
-      # Throw send message event to queue in the future
-    end
+    # Throw send message event to queue in the future
   end
 
   private
