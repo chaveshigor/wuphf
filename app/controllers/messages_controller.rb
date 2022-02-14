@@ -23,14 +23,17 @@ class MessagesController < ApplicationController
   def new
     @new_message = Message.new
     @user_contacts = User.find(current_user.id).contacts.map { |con| [con.first_name, con.id] }
+    @groups = User.find(current_user[:id]).groups.map { |group| [group.name, group.id] }
   end
 
   def create
     new_message = Message.new(message_params)
     new_message.user_id = current_user.id
     new_message.save
-    new_message.contact_ids += contact_params[:contact_id]
-
+    contacts = []
+    contacts += contact_params[:contact_id]
+    contacts += Group.find(group_params[:group]).contact_ids
+    new_message.contact_ids += contacts.uniq
     # Throw send message event to queue in the future
   end
 
@@ -41,6 +44,10 @@ class MessagesController < ApplicationController
   end
 
   def contact_params
-    params.require(:message).permit(contact_id: [])
+    params.require(:message).permit(:title, :message, contact_id: [])
+  end
+
+  def group_params
+    params.require(:message).permit(:group)
   end
 end

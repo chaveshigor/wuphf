@@ -15,6 +15,11 @@
         <%= f.select :contact_id, options_for_select(@user_contacts), {include_blank: false}, {multiple: true} %>
     </div>
 
+    <div>
+        <%= f.label :grupo %>
+        <%= f.select :group, options_for_select(@groups), {include_blank: true} %>
+    </div>
+
     <%= f.submit 'Enviar mensagem' %>
 
 <% end %>
