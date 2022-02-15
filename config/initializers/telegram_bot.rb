@@ -6,4 +6,6 @@ def initialize_telegram_bot
   TelegramNotification.new.authorize
 end
 
-Thread.new { initialize_telegram_bot }
+Rails.application.config.after_initialize do
+  Thread.new { initialize_telegram_bot }
+end
