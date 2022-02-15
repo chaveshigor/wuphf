@@ -18,7 +18,10 @@ class ContactsController < ApplicationController
     @current_contact = Contact.new(contact_params)
     @current_contact[:user_id] = current_user[:id]
 
-    redirect_to contact_path(@current_contact) if @current_contact.save
+    if @current_contact.save
+      redirect_to contact_path(@current_contact)
+      ContactMailer.with(new_contact: @current_contact).notify_new_contact.deliver_later
+    end
   end
 
   def update
