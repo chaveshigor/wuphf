@@ -35,9 +35,9 @@ Rails.application.configure do
 
   # Email config
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :test
   host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   # SMTP settings for mail
   config.action_mailer.smtp_settings = {
