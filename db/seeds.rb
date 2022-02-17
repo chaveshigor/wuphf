@@ -16,7 +16,7 @@ def create_contacts(id)
     last_name: 'pernambucano',
     email: 'junin@gmail.com',
     phone_number: '1234560',
-    telegram_chat_id: 'qwerty',
+    telegram_chat_id: nil,
     gender: 'Homem',
     user_id: id
   },
@@ -26,7 +26,7 @@ def create_contacts(id)
      last_name: 'bruna',
      email: 'anabruna28@gmail.com',
      phone_number: '789654',
-     telegram_chat_id: 'asdfg',
+     telegram_chat_id: nil,
      gender: 'Mulher',
      user_id: id
    },
@@ -36,7 +36,7 @@ def create_contacts(id)
      last_name: 'otaku',
      email: 'fabin@gmail.com',
      phone_number: '741258',
-     telegram_chat_id: 'zxcvb',
+     telegram_chat_id: nil,
      gender: 'Homem',
      user_id: id
    }]
