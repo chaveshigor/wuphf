@@ -37,7 +37,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :email, :telegram_profile, :phone_number, :gender)
+    params.require(:contact).permit(:first_name, :last_name, :email, :telegram_chat_id, :phone_number, :gender)
   end
 
   def set_contact

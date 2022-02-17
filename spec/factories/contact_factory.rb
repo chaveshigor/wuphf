@@ -6,7 +6,7 @@ FactoryBot.define do
     last_name  { 'sertanejo' }
     phone_number { '12345678' }
     email { 'joaozinsertanejo@gmail.com' }
-    telegram_profile { 'pokemonlover' }
+    telegram_chat_id { 'pokemonlover' }
     gender { 'Homem' }
 
     trait :with_user do

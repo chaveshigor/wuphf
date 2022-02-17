@@ -14,7 +14,7 @@ class TelegramNotification
 
     begin
       Telegram::Bot::Client.run(@bot_token) do |bot|
-        bot.api.send_message(chat_id: contact.telegram_profile, text: message_text)
+        bot.api.send_message(chat_id: contact.telegram_chat_id, text: message_text)
         success = true
       rescue Telegram::Bot::Exceptions::ResponseError
         return success
@@ -28,7 +28,7 @@ class TelegramNotification
     contact = Contact.find_by(email: message.text)
     return false if contact.nil?
 
-    contact.telegram_profile = message.chat.id
+    contact.telegram_chat_id = message.chat.id
     contact.save
   end
 

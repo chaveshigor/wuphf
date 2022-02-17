@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20_220_131_142_008) do
     t.string 'last_name'
     t.string 'email'
     t.string 'phone_number'
-    t.string 'telegram_profile'
+    t.string 'telegram_chat_id'
     t.string 'gender'
     t.integer 'user_id', null: false
     t.datetime 'created_at', precision: 6, null: false

@@ -34,7 +34,7 @@ RSpec.describe 'Contacts', type: :request do
           first_name: 'mario',
           last_name: 'luige',
           email: 'marioworld@mail.com',
-          telegram_profile: 'its me',
+          telegram_chat_id: 'its me',
           phone_number: '666',
           gender: 'Homem',
           user_id: 1
