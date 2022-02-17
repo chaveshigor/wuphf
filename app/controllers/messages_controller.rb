@@ -30,11 +30,13 @@ class MessagesController < ApplicationController
     new_message = Message.new(message_params)
     new_message.user_id = current_user.id
     new_message.save
+
     contacts = []
     contacts += contact_params[:contact_id]
-    contacts += Group.find(group_params[:group]).contact_ids
+    contacts += Group.find(group_params[:group]).contact_ids unless group_params[:group].empty?
     new_message.contact_ids += contacts.uniq
-    # Throw send message event to queue in the future
+
+    WuphfContact.call(new_message.contacts, new_message)
     redirect_to message_path(new_message)
   end
 
