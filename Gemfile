@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Telegram api gem
 gem 'telegram-bot-ruby'
+# Sidekiq gem
+gem 'sidekiq'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
