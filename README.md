@@ -6,9 +6,9 @@ If you are a true fan of the office, you certainly remember WUPHF.com, the revol
 
 ## Techs
 
-* Ruby on Rails => For all the CRUD stuff
-* Redis and Sidekiq => For the queue jobs
-* A pretty telegram bot, to notify users
+* Ruby on Rails: For all the CRUD stuff and show views
+* Redis and Sidekiq: For the queue jobs
+* A pretty telegram bot: To notify users
 
 ## Features
 
@@ -16,4 +16,4 @@ If you are a true fan of the office, you certainly remember WUPHF.com, the revol
 * You can make crud operations with your contacts
 * You can make crud operations with contact groups
 * Your contact should allow you to send messages to him
-* You can send a message to any number of contacts that you want. This message will be sent via email and telegram at the same time 
+* You can send a message to any number of contacts that you want. This message will be sent via email and telegram at the same time     

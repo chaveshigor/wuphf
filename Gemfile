@@ -7,8 +7,6 @@ ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Devise gem
 gem 'devise'
 # Rspec gem
@@ -47,6 +45,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Rails controller test gem
   gem 'rails-controller-testing'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
