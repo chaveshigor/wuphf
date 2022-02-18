@@ -2,7 +2,7 @@
 
 If you are a true fan of the office, you certainly remember WUPHF.com, the revolutionary idea born in dunder mifflin. I know you're very eager to use it - that's what she said - but first, let's talk about what it does.
 
-<img src="https://giphy.com/gifs/funny-thats-what-she-said-IJLVLpZQuS4z6" alt="My Project GIF" width="500" height="600">
+<img src="https://giphy.com/gifs/funny-thats-what-she-said-IJLVLpZQuS4z6.gif" alt="My Project GIF" width="500">
 
 ##Techs
 *Ruby on Rails => For all the CRUD stuff
