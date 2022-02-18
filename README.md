@@ -1,24 +1,17 @@
-# README
+# WUPHF
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you are a true fan of the office, you certainly remember WUPHF.com, the revolutionary idea born in dunder mifflin. I know you're very eager to use it - that's what she said - but first, let's talk about what it does.
 
-Things you may want to cover:
+<img src="https://giphy.com/gifs/funny-thats-what-she-said-IJLVLpZQuS4z6" alt="My Project GIF" width="500" height="600">
 
-* Ruby version
+##Techs
+*Ruby on Rails => For all the CRUD stuff
+*Redis and Sidekiq => For the queue jobs
+*A pretty telegram bot, to notify users
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Features
+*You can sing up to use the services
+*You can make crud operations with your contacts
+*You can make crud operations with contact groups
+*Your contact should allow you to send messages to him
+*You can send a message to any number of contacts that you want. This message will be sent via email and telegram at the same time 
