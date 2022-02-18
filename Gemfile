@@ -33,8 +33,7 @@ gem 'telegram-bot-ruby'
 gem 'sidekiq'
 # Postgres gem
 gem 'pg'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
