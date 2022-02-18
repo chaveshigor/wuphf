@@ -31,6 +31,10 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'telegram-bot-ruby'
 # Sidekiq gem
 gem 'sidekiq'
+# Postgres gem
+gem 'pg'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~> 1.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -45,8 +49,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Rails controller test gem
   gem 'rails-controller-testing'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
