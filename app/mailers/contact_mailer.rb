@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContactMailer < ApplicationMailer
   def notify_new_contact
     @new_contact = params[:new_contact]
@@ -8,6 +10,6 @@ class ContactMailer < ApplicationMailer
   def send_mail_message
     @message = params[:message]
     @contact = params[:contact]
-    true if mail(to: @contact.email, subject: 'Você foi WUPHFADO')
+    true if mail(to: @contact['email'], subject: 'Você foi WUPHFADO')
   end
 end
