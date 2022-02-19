@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  post 'telegram_auths/create', to: 'telegram_auths#create'
+
   resources :contacts
   resources :messages, only: %i[index show new create]
   resources :groups
