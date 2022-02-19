@@ -16,7 +16,7 @@ class WuphfContact < ApplicationService
 
   def wuphf_contacts
     contacts.each do |contact|
-      email_sended = ContactMailer.with(contact: contact, message: message).send_mail_message
+      email_sended = ContactMailer.with(contact: contact, message: message).send_mail_message.deliver_later
       telegram_sended = TelegramNotification.new.send_message(contact, message) if contact['telegram_chat_id']
 
       message_info = ContactMessage.find_by(contact_id: contact['id'], message_id: message['id'])
