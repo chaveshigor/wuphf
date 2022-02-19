@@ -7,6 +7,9 @@
 # Ignore .env variables
 .env
 
+# Ignore dump.rdb file
+dump.rdb
+
 # Ignore bundler config.
 /.bundle
 
