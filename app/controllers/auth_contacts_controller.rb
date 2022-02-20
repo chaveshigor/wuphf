@@ -18,7 +18,9 @@ class AuthContactsController < ApplicationController
   end
 
   def auth_contact
-    
+    @contact = Contact.find(params[:contact_id])
+    @contact.auth_to_wuphf = true
+    @contact.save
   end
 
   def auth_telegram_params
