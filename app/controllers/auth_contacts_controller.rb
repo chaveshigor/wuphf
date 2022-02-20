@@ -2,7 +2,6 @@ class AuthContactsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def auth_telegram
-    p 'parametros', params
     chat_id = params[:chat_id]
     email = params[:email]
 
@@ -23,9 +22,7 @@ class AuthContactsController < ApplicationController
     @contact.save
   end
 
-  def auth_telegram_params
-    params.require(:telegram_auth).permit(:email, :chat_id)
-  end
+  private
 
   def number?(str)
     true if Float(str) rescue false
