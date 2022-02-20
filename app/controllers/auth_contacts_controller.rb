@@ -17,6 +17,10 @@ class AuthContactsController < ApplicationController
     render json: { status: true, result: 'contact authorized' }
   end
 
+  def auth_contact
+    
+  end
+
   def auth_telegram_params
     params.require(:telegram_auth).permit(:email, :chat_id)
   end

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   post 'auth_contacts/telegram', to: 'auth_contacts#auth_telegram'
+  get 'auth_contacts', to: 'auth_contacts#auth_contact'
 
   resources :contacts
   resources :messages, only: %i[index show new create]
