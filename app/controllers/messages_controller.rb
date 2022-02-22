@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
     contacts += contact_params[:contact_id]
     contacts += Group.find(group_params[:group]).contact_ids unless group_params[:group].empty?
     new_message.contact_ids += contacts.uniq
-    WuphfContactWorker.perform_async(new_message.contacts.map {|c| c.attributes}, new_message.attributes)
+    WuphfContactWorker.perform_async(new_message.contacts.map(&:attributes), new_message.attributes)
     redirect_to message_path(new_message)
   end
 

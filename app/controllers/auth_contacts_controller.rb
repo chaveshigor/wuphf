@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthContactsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -25,6 +27,8 @@ class AuthContactsController < ApplicationController
   private
 
   def number?(str)
-    true if Float(str) rescue false
+    true if Float(str)
+  rescue StandardError
+    false
   end
 end
