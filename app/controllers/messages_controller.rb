@@ -45,8 +45,4 @@ class MessagesController < ApplicationController
   def group_params
     params.require(:message).permit(:group)
   end
-
-  def contacts_info(contacts)
-
-  end
 end
