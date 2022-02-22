@@ -10,14 +10,7 @@ class MessagesController < ApplicationController
   def show
     message = Message.find(params[:id])
     message_contacts = ContactMessage.where({ message_id: message.id })
-    @message_info = { title: message.title, message: message.message, contacts: message_contacts.map do
-      |contact_message|
-      {
-        full_name: "#{contact_message.contact.first_name} #{contact_message.contact.last_name}".capitalize,
-        telegram_sended: contact_message.telegram_sended,
-        email_sended: contact_message.email_sended
-      }
-    end }
+    @message_info = { title: message.title, message: message.message, contacts_info: message_contacts }
   end
 
   def new
@@ -51,5 +44,9 @@ class MessagesController < ApplicationController
 
   def group_params
     params.require(:message).permit(:group)
+  end
+
+  def contacts_info(contacts)
+
   end
 end
