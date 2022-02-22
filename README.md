@@ -8,7 +8,7 @@ If you are a true fan of the office, you certainly remember WUPHF.com, the revol
 
 * Ruby on Rails: For all the CRUD stuff and show views
 * Redis and Sidekiq: For the queue jobs
-* A pretty telegram bot: To notify users. Check the bot code <a href="https://github.com/chaveshigor/wuphf-telegrambot">BOT CODE</a>
+* A pretty telegram bot: For new contacts to authorize WUPHF to send messages through telegram. Check the <a href="https://github.com/chaveshigor/wuphf-telegrambot">bot code</a>
 
 ## Features
 
