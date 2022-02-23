@@ -2,10 +2,7 @@
 
 FactoryBot.define do
   factory :message do
-    title { 'MyString' }
-    message { 'MyText' }
-    telegram_sended { false }
-    email_sended { false }
-    contact { nil }
+    title { 'RandomTitle' }
+    message { 'RandomMessage' }
   end
 end
