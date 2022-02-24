@@ -16,6 +16,6 @@ class AddUsersToGroup < ApplicationService
 
   def add_users
     group = Group.find(group_id)
-    group.contact_ids += contact_ids
+    group.contact_ids += contact_ids unless contact_ids.nil? || contact_ids.empty?
   end
 end
