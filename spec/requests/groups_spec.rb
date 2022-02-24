@@ -115,6 +115,7 @@ RSpec.describe 'Groups', type: :request do
 
       expect(response).to have_http_status(302)
       expect(group.reload.name).to eq('Akatsuke')
+      expect(group.reload.contacts.count).to eq(contacts_in_group - 1)
       expect(group.reload.contacts.find { |c| c.id == contact2.id }).to eq(nil)
       expect(response).to redirect_to(group_path(group))
     end
