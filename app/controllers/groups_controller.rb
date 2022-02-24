@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
     new_group.save
 
     AddUsersToGroup.call(new_group.id, group_members[:contact_ids])
+    redirect_to group_path(new_group)
   end
 
   def edit
@@ -43,7 +44,7 @@ class GroupsController < ApplicationController
 
   def destroy
     group = Group.find(params[:id])
-    group.destroy
+    redirect_to groups_path if group.destroy
   end
 
   private
@@ -57,7 +58,7 @@ class GroupsController < ApplicationController
   end
 
   def group_edit
-    params.require(:group).permit(:name, :description, contacts_to_remove: [], new_contacts: [])
+    params.require(:group).permit(:name, :description, new_contacts: [], contacts_to_remove: [])
   end
 
   def contact_sanitize(contacts)
