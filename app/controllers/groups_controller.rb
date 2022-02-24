@@ -36,8 +36,9 @@ class GroupsController < ApplicationController
   def update
     group = Group.find(params[:id])
     group.name = group_edit[:name]
-    group.contact_ids += group_edit[:new_contacts]
-    group.contact_ids -= group_edit[:contacts_to_remove]
+    group.contact_ids += group_edit[:new_contacts] if group_edit[:new_contacts].present?
+    group.contact_ids -= group_edit[:contacts_to_remove].map(&:to_i) if group_edit[:contacts_to_remove].present?
+    redirect_to group_path(group) if group.save
   end
 
   def destroy
