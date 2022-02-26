@@ -1,12 +1,6 @@
 <body class='login-body'>
 
-  <div class='login-header'>
-    <%= image_tag('logo.png') %>
-    <div>
-      <a href="/users/sign_up">Cadastre-se</a>
-      <a href="/users/sign_in">Login</a>
-    </div>
-  </div>
+  <%=render 'devise/shared/login_header'%>
 
   <div class='login-container'>
     <div class=login-copy>
