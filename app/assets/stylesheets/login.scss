@@ -89,8 +89,9 @@
 
 .actions {
   margin-top: 20px;
+  width: 100%;
   button {
-    width: 100%;
+    width: 330px;
     padding: 10px;
     background-color: $primary-color;
     color: $bg;
@@ -118,4 +119,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.new_user {
+  width: 100%;
 }
