@@ -24,3 +24,28 @@
 .default-btt:hover {
   cursor: pointer;
 }
+
+.default-body {
+  background-color: $bg;
+}
+
+.default-table {
+  border: solid 2px $primary-color;
+  border-radius: 5px;
+}
+
+.default-table td, .default-table th {
+  padding: 8px;
+  max-width: 200px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.default-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: $primary-color;
+  color: $bg;
+}
