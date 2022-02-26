@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @all_messages = Message.where({ user_id: current_user.id })
+    @all_messages = Message.where({ user_id: current_user.id }).order('created_at DESC')
   end
 
   def show
