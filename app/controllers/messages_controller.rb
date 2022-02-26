@@ -24,15 +24,19 @@ class MessagesController < ApplicationController
     new_message.user_id = current_user.id
     new_message.save
 
-    contacts = []
-    contacts += contact_params[:contact_id] if contact_params[:contact_id].present?
-    contacts += Group.find(group_params[:group]).contact_ids if group_params[:group].present?
-    new_message.contact_ids += contacts.uniq
+    new_message.contact_ids += capture_contacts
     WuphfContactWorker.perform_async(new_message.contacts.map(&:attributes), new_message.attributes)
     redirect_to message_path(new_message)
   end
 
   private
+
+  def capture_contacts
+    contacts = []
+    contacts += contact_params[:contact_id] if contact_params[:contact_id].present?
+    contacts += Group.find(group_params[:group]).contact_ids if group_params[:group].present?
+    contacts.uniq
+  end
 
   def message_params
     params.require(:message).permit(:title, :message)
