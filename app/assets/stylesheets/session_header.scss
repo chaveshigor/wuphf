@@ -1,0 +1,26 @@
+@import 'global';
+
+.session-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
+
+  a {
+    text-decoration: none;
+    font-size: 12px;
+    border: 0;
+    background-color: $primary-color;
+    color: $bg;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,.3) 0px 5px 10px;
+  }
+
+  img {
+    width: 100px;
+    border-radius: 15px;
+  }
+}

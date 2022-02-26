@@ -1,6 +1,10 @@
 <div class='session-header'>
   <%= image_tag('logo.png') %>
   <div>
+    <%= link_to  "Enviar mensagem", new_message_path %>
+    <%= link_to  "Mensagens", messages_path %>
+    <%= link_to  "Contatos", contacts_path %>
+    <%= link_to  "Grupos", groups_path %>
     <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
   </div>
 </div>
