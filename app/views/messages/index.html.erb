@@ -1,14 +1,28 @@
-<h1>Mensagens:</h1>
-<% @all_messages.each do |message| %>
-    <p>----------------</p>
-    <p><%= message.title %></p>
-    <p><%= message.message %></p>
-    
-    <h4>Enviado para:</h4>
-    <% message.contacts.each do |contact| %>
-        <p><%= contact.first_name %> <%= contact.last_name %></p>
-    <% end %>
-    
-<% end %>
+<body class='default-body messages-body'>
 
+  <%=render 'shared/header'%>
 
+  <div class='index-messages-container'>
+    <div class='messages-div'>
+      <h2>Mensagens:</h1>
+      <table class='default-table messages-table'>
+        <tr>
+          <th>Ver</th>
+          <th>Título</th>
+          <th>Mensagem</th>
+          <th>Contatos</th>
+        </tr>
+
+        <% @all_messages.each do |message| %>
+          <tr>
+            <td><%= link_to "Ver", message_path(message) %></td>
+            <td><%= message.title %></td>
+            <td><%= message.message %></td>
+            <td><%= contacts_to_str(message.contacts) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</body>

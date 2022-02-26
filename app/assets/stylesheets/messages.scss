@@ -1,3 +1,32 @@
-// Place all the styles related to the Messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'global';
+
+.messages-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-messages-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages-table {
+  width: 100%;
+}
+
+.messages-div {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    margin-bottom: 15px;
+    color: $primary-color;
+  }
+}
