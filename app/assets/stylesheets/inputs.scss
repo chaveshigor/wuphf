@@ -9,3 +9,17 @@
   outline: none;
   margin: 10px 0;
 }
+
+.default-btt {
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 0;
+  background-color: $primary-color;
+  outline: none;
+  margin: 10px 0;
+}
+
+.default-btt:hover {
+  cursor: pointer;
+}
