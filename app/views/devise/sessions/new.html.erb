@@ -3,14 +3,15 @@
   <%=render 'devise/shared/login_header'%>
 
   <div class='login-container'>
-    <div class=login-copy>
-      <h1>BORA WUPHAR GERAL!</h1>
-      <p>Mande mensagens pra varias plataformas</br>de mensagem ao mesmo tempo para varios</br>amigos ao mesmo tempo. Achou interessante?</br> <b>Vem com nós!</b></p>
-      <a href='/users/sign_up'>Cadastre-se</a>
-    </div>
+    <div class='login-copy-content'>
+      <div class=login-copy>
+        <h1>BORA WUPHAR GERAL!</h1>
+        <p>Mande mensagens pra varias plataformas</br>de mensagem ao mesmo tempo para varios</br>amigos ao mesmo tempo. Achou interessante?</br> <b>Vem com nós!</b></p>
+        <a href='/users/sign_up'>Cadastre-se</a>
+      </div>
 
-    <%= image_tag('person.png') %>
-    
+      <%= image_tag('person.png') %>
+    </div>
     <div class='login-form'>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="login-field">

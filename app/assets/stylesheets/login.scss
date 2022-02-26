@@ -58,6 +58,16 @@
   }
 }
 
+.login-copy-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin-left: 2em;
+  }
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
