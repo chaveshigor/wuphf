@@ -1,10 +1,27 @@
-<h1>Crie um contato</h1>
-<h1>Contatos:</h1>
-<% @contacts.each do |contact| %>
-    <p><%= contact.first_name %></p>
-    <p><%= contact.last_name %></p>
-    <p><%= contact.email %></p>
-    <p><%= contact.telegram_chat_id %></p>
-    <p><%= contact.phone_number %></p>
-    <p><%= contact.gender %></p>
-<%end%>
+<body class='default-body list-contacts'>
+
+  <%=render 'shared/header'%>
+  
+  <h2>Contatos:</h2>
+  <table class='default-table'>
+    <tr>
+      <th>Ver</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Gênero</th>
+    <tr>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to "Ver contato", contact_path(contact) %></td>
+        <td><%= contact.first_name %> <%= contact.last_name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone_number %></td>
+        <td><%= contact.gender %></td>
+      </tr>
+    <%end%>
+  </table>
+
+  <%= link_to "Criar contato", new_contact_path, class: 'default-btt create-contact' %>
+
+</body>
