@@ -1,9 +1,23 @@
-<h1>Titulo: <%=@message_info[:title]%></h1>
-<h2>Mensagem: <%=@message_info[:message]%></h2><br/><br/><br/>
-<h2>Destinatários:</h2><br/><br/>
-<% @message_info[:contacts_info].each do |contact_info| %>
-    <h3>Nome: <%=contact_info.contact.first_name.capitalize%> <%=contact_info.contact.last_name.capitalize%></h3>
-    <h3>Telegram status: <%=contact_info.telegram_sended%></h3>
-    <h3>Email status: <%=contact_info.email_sended%></h3>
-    <br/>
-<% end %>
+<body class='default-body'>
+
+  <%=render 'shared/header'%>
+  <h1>Titulo: <%=@message_info[:title]%></h1>
+  <h2>Mensagem: <%=@message_info[:message]%></h2><br/><br/><br/>
+  <h2>Destinatários:</h2><br/><br/>
+  <table class='default-table'>
+    <tr>
+      <th>Nome</th>
+      <th>Enviado no Telegram</th>
+      <th>Enviado no Email</th>
+    </tr>
+
+    <% @message_info[:contacts_info].each do |contact_info| %>
+      <tr>
+        <td><%=contact_info.contact.first_name.capitalize%> <%=contact_info.contact.last_name.capitalize%></td>
+        <td><%=contact_info.telegram_sended%></td>
+        <td><%=contact_info.email_sended%></td>
+      </tr>
+    <% end %>
+  </table>
+
+</body>
