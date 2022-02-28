@@ -1,25 +1,34 @@
-<%= form_with model: @new_message do |f| %>
-  
+<body class='default-body'>
+
+  <%=render 'shared/header'%>
+
+  <%= form_with model: @new_message do |f| %>
+
     <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+      <%= f.text_field :title, class: 'default-input-2 new-message-title', placeholder: 'Título', id: 'new-message-title' %>
     </div>
     
     <div>
-        <%= f.label :message %>
-        <%= f.text_field :message %>
+      <%= f.text_area :message, class: 'default-input-2 new-message-text', placeholder: 'Mensagem', id: 'new-message-message' %>
+    </div>
+
+    <div class='new-message-contacts'>
+      <%@user_contacts.each do |contact|%>
+        <input type='checkbox' class='new-message-contacts-info' id='new-message-contacts-info-<%=contact[1]%>'/>
+        <label><%=contact[0]%></label>
+        <br>
+      <%end%>
     </div>
 
     <div>
-        <%= f.label :receiver %>
-        <%= f.select :contact_id, options_for_select(@user_contacts), {include_blank: false}, {multiple: true} %>
+      <%= f.label :grupo %>
+      <%= f.select :group, options_for_select(@groups), {include_blank: true}, id: 'new-message-group' %>
     </div>
 
-    <div>
-        <%= f.label :grupo %>
-        <%= f.select :group, options_for_select(@groups), {include_blank: true} %>
-    </div>
+    <button type='button' id='new-message-btt'>Enviar mensagem</button>
 
-    <%= f.submit 'Enviar mensagem' %>
+  <% end %>
 
-<% end %>
+</body>
+
+<%= javascript_pack_tag 'messages/new' %>
