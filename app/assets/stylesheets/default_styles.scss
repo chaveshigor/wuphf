@@ -10,6 +10,12 @@
   margin: 10px 0;
 }
 
+.default-input-2 {
+  border: 0;
+  outline: none;
+  color: $primary-color;
+}
+
 .default-btt {
   padding: 15px;
   font-weight: bold;
@@ -30,7 +36,7 @@
 }
 
 .default-table {
-  border: solid 2px $primary-color;
+  //border: solid 2px $primary-color;
   border-radius: 5px;
 }
 
