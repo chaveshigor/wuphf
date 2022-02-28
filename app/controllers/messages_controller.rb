@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
   def new
     @new_message = Message.new
-    @user_contacts = User.find(current_user.id).contacts.map { |con| [con.first_name, con.id] }
+    @user_contacts = User.find(current_user.id).contacts.map { |con| ["#{con.first_name.capitalize} #{con.last_name.capitalize}", con.id, false] }
     @groups = User.find(current_user[:id]).groups.map { |group| [group.name, group.id] }
   end
 
