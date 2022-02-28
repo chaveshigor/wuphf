@@ -13,6 +13,7 @@
     </div>
 
     <div class='new-message-contacts'>
+      <h3>Destinatários</h3>
       <%@user_contacts.each do |contact|%>
         <input type='checkbox' class='new-message-contacts-info' id='new-message-contacts-info-<%=contact[1]%>'/>
         <label><%=contact[0]%></label>
@@ -25,7 +26,7 @@
       <%= f.select :group, options_for_select(@groups), {include_blank: true}, id: 'new-message-group' %>
     </div>
 
-    <button type='button' id='new-message-btt'>Enviar mensagem</button>
+    <button type='button' id='new-message-btt' class='default-btt new-message-create-btt'>Enviar mensagem</button>
 
   <% end %>
 
