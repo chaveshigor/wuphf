@@ -30,3 +30,27 @@
     color: $primary-color;
   }
 }
+
+.new-message-title {
+  background-color: transparent;
+  font-size: 22px;
+  font-weight: bolder;
+  margin: 20px 0;
+  border-bottom: solid 3px $primary-color;
+  width: 50%;
+  padding: 10px;
+}
+
+.new-message-text {
+  background-color: transparent;
+  font-weight: 300;
+  width: 50%;
+  height: 200px;
+  border-bottom: solid 3px $primary-color;
+  padding: 10px;
+}
+
+.new-message-contacts-table {
+  width: calc(50% + 20px);
+  margin-top: 20px;
+}
