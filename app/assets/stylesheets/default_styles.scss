@@ -1,5 +1,10 @@
 @import 'global';
 
+.default-title {
+  color: $primary-color;
+  margin: 15px 0;
+}
+
 .default-input {
   padding: 15px;
   font-weight: bold;
