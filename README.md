@@ -19,4 +19,4 @@ If you are a true fan of the office, you certainly remember WUPHF.com, the revol
 * Redis and Sidekiq: For the queue jobs
 * Ajax
 * A pretty telegram bot: For new contacts to authorize WUPHF to send messages through telegram. Check the <a href="https://github.com/chaveshigor/wuphf-telegrambot">bot code</a>
-* <a href="https://cryptic-mesa-13758.herokuapp.com">Click here to use the app</a>
+* <a href="https://cryptic-mesa-13758.herokuapp.com" target="_blank">Click here to use the app</a>
