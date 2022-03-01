@@ -35,6 +35,7 @@
     <% end %>
 
     <button type='button' class='default-btt' id='edit-group-btt'>Salvar grupo</button>
+    <%= link_to 'Deletar grupo', group_path(@group), method: :delete, class: 'default-btt delete-group-btt' %>
   <% end %>
 
 </body>
