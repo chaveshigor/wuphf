@@ -2,7 +2,7 @@
   
   <%=render 'shared/header'%>
   
-  <h1>Novo Contato</h1>
+  <h2 class='default-title'>Novo Contato</h2>
   <%= form_with model: @current_contact do |f| %>
     <div>
       <%= f.text_field :first_name, class: 'default-input new-contact-input', placeholder: 'Primeiro Nome' %>
