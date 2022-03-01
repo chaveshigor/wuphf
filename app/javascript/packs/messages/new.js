@@ -34,7 +34,7 @@ function sendMessage(titleInput, messageInput, groupInput, contact_ids) {
             title: titleInput.value,
             message: messageInput.value,
             contact_id: contact_ids,
-            group_id: groupInput.value
+            group: groupInput.value
           }
         })
         return true
