@@ -1,29 +1,30 @@
-<h1>Contacts#new</h1>
-<%= form_with model: @current_contact do |f| %>
+<body class='default-body'>
+  
+  <%=render 'shared/header'%>
+  
+  <h1>Novo Contato</h1>
+  <%= form_with model: @current_contact do |f| %>
     <div>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, class: 'default-input new-contact-input', placeholder: 'Primeiro Nome' %>
     </div>
 
     <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, class: 'default-input new-contact-input', placeholder: 'Último Nome' %>
     </div>
 
     <div>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
+      <%= f.email_field :email, class: 'default-input new-contact-input', placeholder: 'Email' %>
     </div>
 
     <div>
-        <%= f.label :phone_number %>
-        <%= f.phone_field :phone_number %>
+      <%= f.phone_field :phone_number, class: 'default-input new-contact-input', placeholder: 'Telefone' %>
     </div>
 
     <div>
-        <%= f.label :gender %>
-        <%= f.select :gender, ['Homem', 'Mulher'] %>
+      <%= f.label :Gênero %>
+      <%= f.select :gender, ['Homem', 'Mulher'] %>
     </div>
 
-    <%= f.submit "Criar contato" %>
-<% end %>
+    <%= f.submit "Criar contato", class: 'default-btt' %>
+  <% end %>
+</body>
