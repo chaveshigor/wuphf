@@ -1,24 +1,33 @@
-<%= form_with model: @new_group  do |f| %>
+<body>
 
-    <h1>Crie um grupo</h1>
+  <%=render 'shared/header'%>
+
+  <%= form_with model: @new_group  do |f| %>
+
+    <h2 class='default-title'>Novo grupo</h2>
 
     <div>
-        <%= f.label :Nome %>
-        <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'default-input create-group-input', placeholder: 'Nome', id: 'create-group-name' %>
     </div>
 
     <div>
-        <%= f.label :Descrição %>
-        <%= f.text_field :description %>
+      <%= f.text_field :description, class: 'default-input create-group-input', placeholder: 'Descrição', id: 'create-group-description' %>
     </div>
 
-    <h2>Adicione usuários a esse grupo</h2>
+    <h3 class='default-title'>Adicione usuários a esse grupo</h3>
 
     <div>
-        <%= f.label "Contatos no grupo" %>
-        <%= f.select :contact_ids, options_for_select(@user_contacts), {include_blank: false}, {multiple: true} %>
+      <% @user_contacts.each do |contact| %>
+        <input type='checkbox' class='add-user-to-group' id='add-user-to-group-<%=contact[1]%>'/>
+        <%=contact[0].titleize%>
+        <br>
+      <% end %>
     </div>
 
-    <%= f.submit 'Criar grupo' %>
+    <button type='button' class='default-btt' id='create-group-btt'>Criar Grupo</button>
 
-<% end %>
+  <% end %>
+
+</body>
+
+<%= javascript_pack_tag 'groups/new' %>
