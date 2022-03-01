@@ -1,2 +1,42 @@
-<h1>Groups#edit</h1>
-<p>Find me in app/views/groups/edit.html.erb</p>
+<body>
+
+  <%=render 'shared/header'%>
+  <h2 class='default-title'>Editar grupo</h2>
+  
+  <%= form_with model: @group do |f| %>
+    <div>
+      <%= f.text_field :name, placeholder: 'Nome', class: 'default-input create-group-input', id: 'create-group-name' %>
+    </div>
+
+    <div>
+      <%= f.text_field :description, placeholder: 'Descrição', class: 'default-input create-group-input', id: 'create-group-description' %>
+    </div>
+
+    <% if @contacts_not_in_group.present?  %>
+
+      <h3 class='default-title'>Adicionar contatos</h3>
+      <% @contacts_not_in_group.each do |contact| %>
+        <input type='checkbox' class='contact-to-add' id='contact-to-add-<%=contact[1]%>'/>
+        <label><%= contact[0].titleize %></label>
+        <br>
+      <% end %>
+      
+    <% end %>
+
+    <% if @group.contacts.present? %>
+
+      <h3 class='default-title'>Deletar contatos</h3>
+      <% @group.contacts.each do |contact| %>
+        <input type='checkbox' class='contact-to-delete' id='contact-to-delete-<%=contact.id%>'/>
+        <label><%= contact.first_name.titleize %> <%= contact.last_name.titleize %></label>
+        <br>
+      <% end %>
+      
+    <% end %>
+
+    <button type='button' class='default-btt' id='edit-group-btt'>Salvar grupo</button>
+  <% end %>
+
+</body>
+
+<%= javascript_pack_tag 'groups/edit' %>
