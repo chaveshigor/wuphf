@@ -1,4 +1,35 @@
-<% @groups.each do |group| %>
-    <p><%= group.name %> - <%= group.contacts.all.count %> participantes</p>
-<% end %>
+<body class='default-body'>
+
+  <%=render 'shared/header'%>
+
+  <div class='groups-container'>
+    <h2 class='default-title'>Grupos</h2>
+    <% if @groups.empty? %>
+      <p>Voce nao tem grupos. Crie um novo grupo</p>
+    <% end %>
+
+    <% if @groups.present? %>
+      <table class='default-table groups-table'>
+        <tr>
+          <th>Editar</th>
+          <th>Grupo</th>
+          <th>Participantes</th>
+        </tr>
+        <% @groups.each do |group| %>
+          <tr>
+            <td><%= link_to "Editar", edit_group_path(group) %></td>
+            <td><%= group.name %></td>
+            <td><%= group.contacts.all.count %></td>
+          </tr>
+        <% end %>
+      </table>
+      
+    <% end %>
+
+    <%= link_to "Criar Grupo", new_group_path, class: 'default-btt create-group-btt' %>
+
+  </div>
+
+</body>
+
 
