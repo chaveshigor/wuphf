@@ -2,18 +2,15 @@
 
   <%=render 'shared/header'%>
 
-  <h1>
-    <%=@current_contact.first_name%>
-    <%=@current_contact.last_name%>
+  <h1 class='default-title'>
+    <%=@current_contact.first_name.titleize%>
+    <%=@current_contact.last_name.titleize%>
   </h1>
   <div>
     <%=@current_contact.email%>
   </div>
   <div>
     <%=@current_contact.phone_number%>
-  </div>
-  <div>
-    <%=@current_contact.telegram_chat_id%>
   </div>
   <div>
     <%=@current_contact.gender%>
