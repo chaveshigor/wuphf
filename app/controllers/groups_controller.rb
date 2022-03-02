@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
   def index
-    @groups = Group.all
+    @groups = Group.find_by_user_id(curent_user.id)
   end
 
   def show
